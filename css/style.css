@@ -671,6 +671,13 @@ code {
   object-fit: cover;
   transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+.arch--building {
+  aspect-ratio: 7 / 4;
+  border-radius: 18px;
+}
+.arch--building img {
+  object-fit: contain;
+}
 .arch--sm {
   aspect-ratio: 1 / 1.1;
   margin-bottom: 1.1rem;
