@@ -132,8 +132,6 @@ const App = {
           <p class="footer-tag">${esc(cfg.tagline)} </p>
           <a class="btn btn-gold btn-sm" data-wa target="_blank" rel="noopener">${icon("whatsapp", 18)} Chat on WhatsApp</a> </p>
           <p><a class="btn btn-sm btn-gold" href="admin/login.html">Admin login</a></p>
-
-
         </div>
         <div><h2 class="footer-h">Quick links</h2><ul class="footer-list">
           <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="admissions.html">Admissions</a></li>
@@ -145,12 +143,11 @@ const App = {
           <li>${icon("mail", 18)}<a data-mail>${esc(cfg.email)}</a></li>
           <li>${icon("whatsapp", 18)}<a data-wa target="_blank" rel="noopener">WhatsApp us</a></li>
           <li>${icon("pin", 18)}<span>${cfg.addressLines.map(esc).join("<br>")}</span></li></ul>
-          <ul class="social-row" aria-label="Social media">${soc("facebook", "Facebook")}${soc("instagram", "Instagram")}${soc("tiktok", "TikTok")}${soc("youtube", "YouTube")}</ul></div>
+          <ul class="social-row" aria-label="Social media">${soc("facebook", "Facebook")}${soc("instagram", "Instagram")}${soc("tiktok", "TikTok")}${soc("youtube", "YouTube")}</ul></div> 
       </div>
       <div class="footer-bottom"><div class="container footer-bottom__in">
         <p>&copy; 2026 ${esc(cfg.name)}. All Rights Reserved.</p>
-        <p><span>${esc(cfg.designer)}</span></p>
-        <p><a href="admin/login.html">Admin login</a></p></div></div>
+        <p><span><a href="https://sowfte.com" > ${esc(cfg.designer)} <a></span></p>
       <a class="wa-float" data-wa target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">${icon("whatsapp", 28)}<span>Chat with us</span></a>`;
     $$(".social.is-placeholder", f).forEach((a) =>
       a.addEventListener("click", (e) => {

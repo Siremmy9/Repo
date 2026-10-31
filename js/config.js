@@ -40,8 +40,14 @@ const schoolConfig = {
   mapUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.354431716398!2d3.6541889749924574!3d6.471305993520402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf951eaf38345%3A0x13eb1c618447402b!2sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793456988610!5m2!1sen!2sng",
   colors: { primary: "#121F3E", secondary: "#F4C430" },
+  social: {
+    facebook: "https://web.facebook.com/TEXCELS/?_rdc=1&_rdr#",
+    instagram: "https://www.instagram.com/texcel_schools/",
+    youtube: "https://youtube.com/@TEXCELSchools?si=2tks3uSxIaijQB-X ",
+    tiktok: "https://www.tiktok.com/search?q=texcel%20schools&t=1793475923849",
+  },
 
-  designer: "Emmanuel | Sowftech",
+  designer: " | Sowftech",
 
   stats: { years: 10, students: 1200, staff: 40, programs: 12 },
 
@@ -106,7 +112,7 @@ const schoolConfig = {
 
   about: {
     intro:
-      "Curiosity begins here with us at Texcel schools . Texcels Schools allows our little ones to safely explore their environment with their five (5) senses.",
+      "Curiosity begins here with us at Texcel schools . Texcels  allows our little ones to safely explore their environment with their five (5) senses.",
     mission:
       "We are dedicated to inspire, nurture and educate children in a conducive, safe and prepared environment through highly skilled professionals, making learning easier for children and developing them to become seasoned future leaders and Joy of Many Nations.",
     vision:
