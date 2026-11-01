@@ -57,7 +57,7 @@ const schoolConfig = {
       id: "creche",
       name: "Crèche",
       age: "Ages 0 to 2 ",
-      desc: "A safe, nurturing and stimulating environment for our youngest learners.",
+      desc: "Specially designed curriculum prepared for them helps to promote social, intellectual, physical, and emotional development",
       focus: [
         "Caring, closely supervised daily routines",
         "Sensory play and early movement",
@@ -67,7 +67,7 @@ const schoolConfig = {
     },
     {
       id: "nursery",
-      name: "Nursery",
+      name: "Pre School",
       age: "Ages 3 to 5 ",
       desc: "Building strong foundations through play, discovery and early learning.",
       focus: [
@@ -79,7 +79,7 @@ const schoolConfig = {
     },
     {
       id: "primary",
-      name: "Primary",
+      name: "Primary School",
       age: "Primary 1 to Primary 6",
       desc: "Developing academic knowledge, confidence, creativity and character.",
       focus: [
@@ -98,7 +98,7 @@ const schoolConfig = {
     },
     {
       id: "secondary",
-      name: "Secondary",
+      name: "College",
       age: "JSS 1 to SS 3",
       desc: "Preparing students for higher education, leadership and future opportunities.",
       focus: [

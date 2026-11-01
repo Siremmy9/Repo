@@ -443,7 +443,7 @@ const schoolContent = {
     payment: {
       note: "Fees and payment information can be updated by the school administrator.",
       bankName: "Bank Name",
-      accountName: "Eagles world Schools",
+      accountName: " Texcel Schools",
       accountNumber: "XXXXXXXXXX",
       instructions:
         "Please use your child's full name and class as the payment reference, and send proof of payment to the school office or via WhatsApp.",
