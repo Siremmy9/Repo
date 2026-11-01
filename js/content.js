@@ -54,7 +54,7 @@ const schoolContent = {
       category: "Classrooms",
     },
     {
-      image: "assets/images/facilities/building.jpg",
+      image: "assets/images/facilities/prybuilding.jpg",
       caption: "Primary School building",
       category: "Classrooms",
     },
@@ -119,6 +119,11 @@ const schoolContent = {
       category: "Sports",
     },
     {
+      image: "assets/images/facilities/sax.jpg",
+      caption: "Outdoor Learning ",
+      category: "Students",
+    },
+    {
       image: "assets/images/gallery/arts.jpg",
       caption: "Art lesson",
       category: "Classrooms",
@@ -129,7 +134,12 @@ const schoolContent = {
       category: "Events",
     },
     {
-      image: "assets/images/gallery/firstaid.jpg",
+      image: "assets/images/facilities/wazobia.jpg",
+      caption: "Wazobia Visit",
+      category: "Events",
+    },
+    {
+      image: "assets/images/facilities/firstaid.jpg",
       caption: "Medical Team",
       category: "Facilities",
     },
@@ -169,7 +179,7 @@ const schoolContent = {
       title: "Inter-House Sports",
       category: "Sports",
       date: "2026-09-07",
-      image: "assets/images/news/sports.jpg",
+      image: "assets/images/facilities/sport.jpg",
       published: true,
       excerpt:
         "Highlights, house points and photos from the school's sports competition.",
@@ -179,7 +189,7 @@ const schoolContent = {
       title: "Graduation Ceremony",
       category: "Events",
       date: "2026-08-30",
-      image: "assets/images/news/graduation.jpg",
+      image: "assets/images/facilities/graduation.jpg",
       published: true,
       excerpt:
         "Details of the ceremony for graduating pupils, with a guide for families.",
@@ -213,6 +223,17 @@ const schoolContent = {
       excerpt:
         "Where our pupils are going, what to bring and how to give consent.",
       content: "TBA.",
+    },
+    {
+      title: "Music Festival ",
+      category: "Announcements",
+      date: "2026-07-21",
+      image: "assets/images/facilities/sax.jpg",
+      published: true,
+      excerpt:
+        "Admission is open. Read how to begin the process for your child.",
+      content:
+        "Admission is open for Crèche, Nursery, Primary and Secondary.\n\nUse the Apply Now button or message us on WhatsApp.",
     },
     {
       title: "Examination Timetable",
