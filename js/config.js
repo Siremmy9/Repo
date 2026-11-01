@@ -1,8 +1,8 @@
 const schoolConfig = {
   /* ---- Identity ---- */
   name: "Texcel Schools",
-  tagline: "Education Is not a gamble",
-  heroTitle: "Education Is not a gamble",
+  tagline: "Raising The Joy of Nations",
+  heroTitle: "Raising The Joy of Nations",
   heroSubtitle: "Choose wisely, choose texcel schools",
   heroText:
     "Building confident, knowledgeable and responsible young minds through quality education, discipline and character.",
