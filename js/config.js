@@ -116,9 +116,7 @@ const schoolConfig = {
     mission:
       "We are dedicated to inspire, nurture and educate children in a conducive, safe and prepared environment through highly skilled professionals, making learning easier for children and developing them to become seasoned future leaders and Joy of Many Nations.",
     vision:
-      "To raise children that are excellent morally and academically, ultimately becoming solid and responsible future leaders.",
-    philosophy:
-      "Children learn best when they feel safe, known and challenged. We combine firm discipline with warm relationships, and strong academics with character, creativity and service.",
+      "dddTo raise children that are excellent morally and academically, ultimately becoming solid and responsible future leaders.",
   },
 
   values: [
