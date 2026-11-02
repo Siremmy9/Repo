@@ -12,7 +12,7 @@ const schoolContent = {
       position: "Principal",
       department: "Administration",
       photo: "assets/images/logo.jpg",
-      bio: "Head Teacher with a primary purpose of raising excellent and morally upright people, leaders and world changers in the country",
+      bio: "Principal with a primary purpose of raising excellent and morally upright people, leaders and world changers in the country",
     },
     {
       name: "Mrs Adeleke",
@@ -284,24 +284,24 @@ const schoolContent = {
     {
       title: "Playground",
       description: "Safe outdoor play areas for the youngest learners.",
-      image: "assets/images/gallery/playground.jpg",
+      image: "assets/images/facilities/surrounding.jpg",
     },
     {
-      title: "Sports Facilities",
+      title: "Musical Equipments",
       description:
         "Space for football, athletics and inter-house competitions.",
-      image: "assets/images/gallery/sports.jpg",
+      image: "assets/images/facilities/musickids.jpg",
     },
     {
       title: "School Bus",
       description: "Safe, supervised transport on set routes.",
       image: "assets/images/gallery/bus.jpg",
     },
-    {
-      title: "Security",
-      description: "Controlled access and attentive staff on duty.",
-      image: "",
-    },
+    // {
+    //   title: "Security",
+    //   description: "Controlled access and attentive staff on duty.",
+    //   image: "",
+    // },
     {
       title: "Cafeteria",
       description: "Clean, supervised space for meals and snacks.",
@@ -310,7 +310,7 @@ const schoolContent = {
     {
       title: "Medical and First Aid",
       description: "First-aid support for minor injuries and emergencies.",
-      image: "assets/images/gallery/firstaid.jpg",
+      image: "assets/images/facilities/firstaid.jpg",
     },
     {
       title: "Creative Arts Area",
