@@ -18,4 +18,6 @@ assets/  images/(staff, gallery, news, facilities)  videos/  icons/  logo/
 ## Notes
 
 - Sample statistics, staff names, news text, hours and age ranges are placeholders: replace them.
+- Primary and Secondary school detail-page locations and WhatsApp numbers are configured in `js/config.js` under `schoolLocations`. Add the Secondary school's address, Google Maps embed URL and WhatsApp number there.
+- Leadership welcome messages and portraits are configured in `js/content.js` under `leadership`. The Proprietress portrait is already available; add the Principal's and Headmistress's portrait paths to replace their generated placeholders.
 - Respects `prefers-reduced-motion`.

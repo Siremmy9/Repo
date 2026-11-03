@@ -169,9 +169,19 @@ const App = {
     });
     $$("[data-logo]", scope).forEach((i) => (i.src = Utils.assetUrl(cfg.logo)));
     $$("[data-wa]", scope).forEach((a) => {
-      a.href = Utils.waLink(a.dataset.wa || undefined);
+      const pageLocation = cfg.schoolLocations?.[document.body.dataset.school];
+      const number = a.dataset.waNumber ?? pageLocation?.whatsapp;
+      if (number !== undefined && !Utils.validDigits(number)) {
+        a.removeAttribute("href");
+        a.removeAttribute("target");
+        a.removeAttribute("rel");
+        a.setAttribute("aria-disabled", "true");
+        return;
+      }
+      a.href = Utils.waLink(a.dataset.wa || undefined, number || undefined);
       a.target = "_blank";
       a.rel = "noopener";
+      a.removeAttribute("aria-disabled");
     });
     $$("[data-tel]", scope).forEach((a) => {
       if (Utils.validDigits(cfg.phone))
@@ -205,6 +215,31 @@ const App = {
   /* --------------------------------- Renderers --------------------------------- */
   const R = App.renderers;
 
+  function leadershipMarkup(person, index = 0) {
+    if (!person) return "";
+    const photo = img(
+      person.photo,
+      person.name,
+      index,
+      640,
+      800,
+    );
+    return `<article class="leadership-note reveal">
+      <div class="arch leadership-note__photo"><img src="${esc(photo)}" alt="${person.photo ? `Portrait of ${esc(person.name)}` : `Portrait placeholder for ${esc(person.name)}`}" width="640" height="800" loading="lazy" decoding="async"></div>
+      <div class="leadership-note__body"><p class="chip">${esc(person.title)}</p><h2>A welcome from ${esc(person.name)}</h2>
+        ${person.welcome.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}
+        <p class="leadership-note__signature"><strong>${esc(person.name)}</strong><br>${esc(person.title)}</p>
+      </div>
+    </article>`;
+  }
+
+  R.leadership = (el) => {
+    const people = Content.get(KEYS.leadership, {});
+    el.innerHTML =
+      leadershipMarkup(people[el.dataset.leader]) ||
+      `<p class="empty">Welcome message is not configured.</p>`;
+  };
+
   R.stats = (el) => {
     const s = cfg.stats || {};
     const items = [
@@ -230,13 +265,15 @@ const App = {
           return `<article class="school-card reveal">
         <div class="arch"><img src="${esc(src)}" alt="Pupils in the ${esc(l.name)} section of ${esc(cfg.name)}" width="640" height="800" loading="lazy" decoding="async"></div>
         <div class="school-card__body"><p class="chip">${esc(l.age)}</p><h3>${esc(l.name)}</h3><p>${esc(l.desc)}</p>
-        <a class="btn btn-outline btn-sm" href="schools.html#${l.id}">Learn More<span class="sr-only"> about ${esc(l.name)}</span></a></div></article>`;
+        <div class="btn-row"><a class="btn btn-outline btn-sm" href="schools.html#${l.id}">Learn More<span class="sr-only"> about ${esc(l.name)}</span></a>
+        ${l.detailPage ? `<a class="btn btn-wine btn-sm" href="${esc(l.detailPage)}">View school<span class="sr-only"> details for ${esc(l.name)}</span></a>` : ""}</div></div></article>`;
         return `<article class="level-block reveal" id="${l.id}">
         <div class="arch arch--lg"><img src="${esc(src)}" alt="${esc(l.name)} section at ${esc(cfg.name)}" width="640" height="800" loading="lazy" decoding="async"></div>
         <div class="level-block__text"><h2>${esc(l.name)}</h2><p class="chip">${esc(l.age)}</p><p class="lead">${esc(l.desc)}</p>
         <h3>What children experience</h3><ul class="ticks">${l.focus.map((f) => `<li>${icon("check", 18)}${esc(f)}</li>`).join("")}</ul>
         <div class="btn-row"><a class="btn btn-wine" href="admissions.html?level=${l.id}#apply">Apply to ${esc(l.name)}</a>
-        <a class="btn btn-outline" data-wa="Hello ${esc(cfg.name)}, I would like to know more about your ${esc(l.name)} section." target="_blank" rel="noopener">${icon("whatsapp", 18)} Ask on WhatsApp</a></div></div></article>`;
+        <a class="btn btn-outline" data-wa="Hello ${esc(cfg.name)}, I would like to know more about your ${esc(l.name)} section." target="_blank" rel="noopener">${icon("whatsapp", 18)} Ask on WhatsApp</a>
+        ${l.detailPage ? `<a class="btn btn-outline" href="${esc(l.detailPage)}">View school<span class="sr-only"> details for ${esc(l.name)}</span></a>` : ""}</div></div></article>`;
       })
       .join("");
   };
@@ -446,6 +483,65 @@ const App = {
       : `<!-- PASTE GOOGLE MAP EMBED URL HERE (config.js > mapUrl) -->
          <div class="map-placeholder">${icon("pin", 40)}<p><strong>Google Map goes here</strong></p>
          <p>Paste the Google Maps embed URL in <code>js/config.js</code> (mapUrl).</p></div>`;
+  };
+
+  R["school-detail"] = (el) => {
+    const key = el.dataset.school;
+    const school = cfg.levels.find((level) => level.id === key);
+    const location = cfg.schoolLocations?.[key];
+    const leaders = Content.get(KEYS.leadership, {});
+    if (!school || !location) {
+      el.innerHTML = `<p class="empty">School details are not configured yet.</p>`;
+      return;
+    }
+
+    const mapUrl = String(location.mapUrl || "").trim();
+    const hasMap =
+      /^https:\/\/www\.google\.com\/maps\/embed/.test(mapUrl) ||
+      /^https:\/\/maps\.google\.com\//.test(mapUrl);
+    const hasWhatsapp = Utils.validDigits(location.whatsapp);
+    const schoolImage = img(
+      cfg.images?.[school.id],
+      school.name,
+      0,
+      800,
+      1000,
+    );
+    const address =
+      location.address ||
+      `Add the ${school.name.toLowerCase()} address in js/config.js.`;
+
+    el.innerHTML = `
+      <div class="container">
+        <div class="section-head">
+          <p class="chip">${esc(school.age)}</p>
+          <h2>${esc(school.name)} at Texcel Schools</h2>
+          <p>${esc(school.desc)}</p>
+        </div>
+        ${school.leader ? leadershipMarkup(leaders[school.leader], key === "primary" ? 1 : 2) : ""}
+        <div class="split school-detail">
+          <div class="arch arch--building"><img src="${esc(schoolImage)}" alt="${esc(school.name)} at ${esc(cfg.name)}" width="800" height="1000" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Learning at ${esc(school.name)}</h3>
+            <ul class="ticks">${school.focus.map((item) => `<li>${icon("check", 18)}${esc(item)}</li>`).join("")}</ul>
+            <p><strong>Classes:</strong> ${school.classes.map(esc).join(", ")}</p>
+            <p><strong>Location:</strong> ${esc(address)}</p>
+            <div class="btn-row">
+              <a class="btn btn-wine" href="admissions.html?level=${esc(school.id)}#apply">Apply to ${esc(school.name)}</a>
+              ${hasWhatsapp
+                ? `<a class="btn btn-outline" data-wa="Hello ${esc(cfg.name)}, I would like to know more about ${esc(school.name)}." data-wa-number="${esc(location.whatsapp)}" target="_blank" rel="noopener">${icon("whatsapp", 18)} WhatsApp this school</a>`
+                : `<span class="btn btn-outline" aria-disabled="true">Add this school's WhatsApp number in js/config.js</span>`}
+              <a class="btn btn-outline" href="schools.html#${esc(school.id)}">All school sections</a>
+            </div>
+          </div>
+        </div>
+        <div class="school-detail__map">
+          <h2>Find ${esc(school.name)}</h2>
+          ${hasMap
+            ? `<div class="map-box"><iframe title="Map showing ${esc(school.name)} at ${esc(cfg.name)}" src="${esc(mapUrl)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>`
+            : `<div class="map-placeholder">${icon("pin", 40)}<p><strong>School map to be added</strong></p><p>Add this school's Google Maps embed URL in <code>js/config.js</code> under <code>schoolLocations.${esc(key)}.mapUrl</code>.</p></div>`}
+        </div>
+      </div>`;
   };
 
   /* ------------------------------ Page behaviours ------------------------------ */

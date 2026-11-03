@@ -17,6 +17,7 @@ const KEYS = {
   students: "school_students",
   facilities: "school_facilities",
   academics: "school_academics",
+  leadership: "school_leadership",
   seeded: "school_seeded_v1",
 };
 
@@ -307,6 +308,7 @@ const Content = {
       KEYS.academics,
       KEYS.testimonials,
       KEYS.fees,
+      KEYS.leadership,
     ].includes(k);
   },
   get(k, fb) {
@@ -368,6 +370,8 @@ const Content = {
         }));
       case KEYS.fees:
         return c.fees || fb;
+      case KEYS.leadership:
+        return c.leadership || fb;
     }
     return fb;
   },

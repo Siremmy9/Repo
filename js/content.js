@@ -1,4 +1,33 @@
 const schoolContent = {
+  leadership: {
+    proprietress: {
+      name: "Mrs Olufadeji Foluso",
+      title: "Proprietress",
+      photo: "assets/images/facilities/propiertress.jpg",
+      welcome: [
+        "Welcome to Texcel Schools. We believe every child deserves a caring, safe and inspiring environment in which to learn, grow in confidence and discover their potential.",
+        "Our dedicated team works in partnership with families to nurture strong character, curiosity and academic progress. Thank you for considering Texcel Schools for your child's journey. We look forward to welcoming your family.",
+      ],
+    },
+    principal: {
+      name: "Mr Odeniyi",
+      title: "Principal, Secondary School",
+      photo: "assets/images/facilities/logo.jpg",
+      welcome: [
+        "Welcome to the Secondary School at Texcel Schools. We are committed to helping every student grow in knowledge, character and confidence as they prepare for the opportunities ahead.",
+        "We value the partnership between school and family and look forward to supporting your child's next stage of learning.",
+      ],
+    },
+    primaryHead: {
+      name: "Mrs Adeleke",
+      title: "Headmistress, Primary School",
+      photo: "assets/images/facilities/mistress.jpeg",
+      welcome: [
+        "Welcome to the Primary School at Texcel Schools. Our aim is to give every child a strong foundation for learning while helping them grow in confidence, creativity and character.",
+        "We look forward to working with your family and making your child's primary years happy, purposeful and full of discovery.",
+      ],
+    },
+  },
   staff: [
     {
       name: "Mrs Olufadeji Foluso ",

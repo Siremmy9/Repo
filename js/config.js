@@ -39,6 +39,21 @@ const schoolConfig = {
 
   mapUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.354431716398!2d3.6541889749924574!3d6.471305993520402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf951eaf38345%3A0x13eb1c618447402b!2sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793456988610!5m2!1sen!2sng",
+  schoolLocations: {
+    primary: {
+      address: "See the map below for this school's location.",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16766.09517959793!2d3.6464641512850067!3d6.471305883366621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793705355860!5m2!1sen!2sng",
+      whatsapp: "2347037116024",
+    },
+    secondary: {
+      address: " Chima Unachukwu Drive Abijo-Ajah.",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16766.09517959793!2d3.6464641512850067!3d6.471305883366621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793705355860!5m2!1sen!2sng",
+
+      whatsapp: "2348039165177",
+    },
+  },
   colors: { primary: "#121F3E", secondary: "#F4C430" },
   social: {
     facebook: "https://web.facebook.com/TEXCELS/?_rdc=1&_rdr#",
@@ -80,6 +95,8 @@ const schoolConfig = {
     {
       id: "primary",
       name: "Primary School",
+      detailPage: "primary-school.html",
+      leader: "primaryHead",
       age: "Primary 1 to Primary 6",
       desc: "Developing academic knowledge, confidence, creativity and character.",
       focus: [
@@ -98,7 +115,9 @@ const schoolConfig = {
     },
     {
       id: "secondary",
-      name: "College",
+      name: "Secondary School",
+      detailPage: "secondary-school.html",
+      leader: "principal",
       age: "JSS 1 to SS 3",
       desc: "Preparing students for higher education, leadership and future opportunities.",
       focus: [
