@@ -1,6 +1,6 @@
 # Texcel Schools frontend
 
-The website now runs as a TypeScript, React, and Next.js frontend. Existing pages, styling, assets, and browser interactions are kept in place while they are hosted through Next.js routes. This lets the frontend be run independently from the existing backend.
+The website runs as a TypeScript, React, and Next.js frontend. All public and admin page markup is implemented as typed TSX components under `src/legacy/pages/`, and Next.js serves the clean routes directly. The original stylesheets, fonts, images, and video are preserved under `public/`.
 
 ## Run locally
 
@@ -18,10 +18,11 @@ Set `NEXT_PUBLIC_API_BASE_URL` in `.env.local` to your backend's public API orig
 
 Until that contract is wired in, the existing forms and admin dashboard retain their original browser-local demo behavior. The admin login is not production authentication, and local browser data does not sync across devices.
 
-## Existing content
+## Existing content and behavior
 
 - Public pages and administration pages retain their current URLs without the `.html` extension. Existing `.html` links redirect to the corresponding Next.js route.
-- Website content is still sourced from the existing `public/js/config.js` and `public/js/content.js` files during this compatibility stage.
+- Website content is still sourced from `public/js/config.js` and `public/js/content.js`.
+- Existing browser-side interactions are still powered by the JavaScript files under `public/js/` while page markup is rendered by React.
 - Replace sample statistics, staff details, news, hours, and age ranges with confirmed school information.
 - School locations and WhatsApp numbers are configured in `public/js/config.js`; leadership messages and portraits are configured in `public/js/content.js`.
 - The website respects `prefers-reduced-motion`.

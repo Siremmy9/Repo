@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 
 type Props = {
-  scripts: string[];
+  scripts: readonly string[];
   bodyClass: string;
   school?: string;
   adminPage?: string;
-  legacyPage: string;
 };
 
 export default function LegacyRuntime({
@@ -15,14 +14,12 @@ export default function LegacyRuntime({
   bodyClass,
   school,
   adminPage,
-  legacyPage,
 }: Props) {
   const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
     let active = true;
     document.body.dataset.root = "/";
-    document.body.dataset.legacyPage = legacyPage;
     document.body.className = bodyClass;
     if (school) document.body.dataset.school = school;
     else delete document.body.dataset.school;
@@ -78,7 +75,7 @@ export default function LegacyRuntime({
     return () => {
       active = false;
     };
-  }, [adminPage, bodyClass, legacyPage, school, scripts]);
+  }, [adminPage, bodyClass, school, scripts]);
 
   if (!loadError) return null;
   return (
