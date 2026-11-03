@@ -137,7 +137,7 @@
       <div class="admin-app">
         <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
           <div class="sidebar__brand"><img src="${esc(Utils.assetUrl(cfg.logo))}" alt="" width="40" height="40"><div><strong>${esc(cfg.name)}</strong><span>Admin</span></div></div>
-          <nav><ul>${NAV.map(([k, label, ic]) => `<li><a href="${k}.html"${k === PAGE ? ' aria-current="page"' : ""}>${icon(ic, 20)}<span>${label}</span>${badge(k)}</a></li>`).join("")}
+          <nav><ul>${NAV.map(([k, label, ic]) => `<li><a href="/admin/${k}"${k === PAGE ? ' aria-current="page"' : ""}>${icon(ic, 20)}<span>${label}</span>${badge(k)}</a></li>`).join("")}
             <li><button type="button" id="logout">${icon("logout", 20)}<span>Logout</span></button></li></ul></nav>
         </aside>
         <div class="sidebar-scrim" id="scrim"></div>
@@ -145,7 +145,7 @@
           <header class="topbar">
             <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">${icon("menu", 24)}</button>
             <p class="topbar__title">${esc(title)}</p>
-            <a class="btn btn-ghost btn-sm" href="../index.html" target="_blank" rel="noopener">${icon("external", 16)} View website</a>
+            <a class="btn btn-ghost btn-sm" href="/" target="_blank" rel="noopener">${icon("external", 16)} View website</a>
             <span class="user-chip" title="Signed in (demo)"><span class="avatar-sm">${esc(Utils.initials(adminName()))}</span>${esc(adminName())}</span>
           </header>
           <main id="admin-content" class="admin-content" tabindex="-1"></main>
@@ -166,7 +166,7 @@
     );
     $("#logout").addEventListener("click", () => {
       Auth.logout();
-      location.href = "login.html";
+      location.href = "/admin/login";
     });
   }
   const refreshBadges = () =>
@@ -435,26 +435,26 @@
       stu = Store.all(KEYS.students),
       msgs = Store.all(KEYS.messages);
     const cards = [
-      ["Total Students", stu.length, "students", "students.html"],
-      ["Admission Enquiries", adm.length, "clipboard", "admissions.html"],
-      ["Staff", Store.all(KEYS.staff).length, "users", "../about.html#team"],
+      ["Total Students", stu.length, "students", "/admin/students"],
+      ["Admission Enquiries", adm.length, "clipboard", "/admin/admissions"],
+      ["Staff", Store.all(KEYS.staff).length, "users", "/about#team"],
       [
         "Published News",
         Store.all(KEYS.news).filter((n) => n.published).length,
         "news",
-        "../news.html",
+        "/news",
       ],
       [
         "Gallery Items",
         Store.all(KEYS.gallery).length,
         "image",
-        "../gallery.html",
+        "/gallery",
       ],
       [
         "Unread Messages",
         msgs.filter((m) => m.status === "Unread").length,
         "mail",
-        "messages.html",
+        "/admin/messages",
       ],
     ];
     const months = [];
@@ -498,7 +498,7 @@
         <section class="panel"><h2>Enquiries in the last 6 months</h2>${colChart(months, "Admission enquiries per month")}</section>
         <section class="panel"><h2>Admission pipeline</h2><ul class="hbars">${statuses.map((s) => `<li><span>${s.l}</span><div class="hbar"><i class="${statusClass(s.l)}" style="width:${Math.round((s.v / maxS) * 100)}%"></i></div><b>${s.v}</b></li>`).join("")}</ul></section>
         <section class="panel"><h2>Students by section</h2>${byLevel.length ? donut(byLevel, "Students by section") : '<p class="muted">Add students to see this chart.</p>'}</section>
-        <section class="panel"><h2>Recent activity</h2><ul class="feed">${acts.map((a) => `<li><span>${esc(a.text)}</span><time datetime="${a.iso}">${Utils.fmtDate(a.iso)} ${Utils.fmtTime(a.iso)}</time></li>`).join("") || '<li class="muted">No activity yet.</li>'}</ul><a class="link" href="activities.html">View all activity</a></section>
+        <section class="panel"><h2>Recent activity</h2><ul class="feed">${acts.map((a) => `<li><span>${esc(a.text)}</span><time datetime="${a.iso}">${Utils.fmtDate(a.iso)} ${Utils.fmtTime(a.iso)}</time></li>`).join("") || '<li class="muted">No activity yet.</li>'}</ul><a class="link" href="/admin/activities">View all activity</a></section>
       </div>`;
   }
 
@@ -675,7 +675,7 @@
 
   /* ----------------------------------- Settings --------------------------------- */
   function loginPage() {
-    if (Auth.current()) return location.replace("dashboard.html");
+    if (Auth.current()) return location.replace("/admin/dashboard");
     $$("[data-cfg]").forEach((el) => {
       const v = el.dataset.cfg.split(".").reduce((a, k) => a && a[k], cfg);
       if (v) el.textContent = v;
@@ -699,7 +699,7 @@
       );
       if (r.ok) {
         Activity.log("Admin signed in.", "admin");
-        location.href = "dashboard.html";
+        location.href = "/admin/dashboard";
       } else {
         err.textContent = r.error;
         err.hidden = false;
@@ -719,7 +719,7 @@
 
   /* ------------------------------------ Router ---------------------------------- */
   if (PAGE === "login") return loginPage();
-  if (!Auth.current()) return location.replace("login.html");
+  if (!Auth.current()) return location.replace("/admin/login");
   shell();
   if (PAGE === "dashboard") dashboard();
   else if (PAGE === "admissions") admissionsPage();

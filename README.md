@@ -1,23 +1,27 @@
-# Texcel Schools: Website Template
+# Texcel Schools frontend
 
-A premium, responsive school website built with plain HTML5, CSS3 and vanilla JavaScript (no frameworks, no backend).
+The website now runs as a TypeScript, React, and Next.js frontend. Existing pages, styling, assets, and browser interactions are kept in place while they are hosted through Next.js routes. This lets the frontend be run independently from the existing backend.
 
-## Folder structure
+## Run locally
 
-```
-index.html about.html schools.html academics.html admissions.html fees.html
-facilities.html gallery.html news.html contact.html
-admin/   login, dashboard, admissions, students, messages, activities
-css/     style.css  responsive.css  admin.css
-js/      config.js  content.js  storage.js  main.js  admissions.js  fees.js  gallery.js  admin.js
-assets/  images/(staff, gallery, news, facilities)  videos/  icons/  logo/
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
 ```
 
-**Important:** the login is DEMO ONLY and not secure (see the comment at the top of `js/admin.js`). Admissions and messages are saved in the browser where they were submitted, so a parent's enquiry will not appear in your admin on another device until a backend (e.g. Supabase or PHP + MySQL) is connected. Until then, the WhatsApp buttons are the reliable way for parents to reach you.
+Use Node.js 20.9 or later. Open [http://localhost:3000](http://localhost:3000). Use `npm run build` to create a production build and `npm start` to run it.
 
-## Notes
+## Backend connection
 
-- Sample statistics, staff names, news text, hours and age ranges are placeholders: replace them.
-- Primary and Secondary school detail-page locations and WhatsApp numbers are configured in `js/config.js` under `schoolLocations`. Add the Secondary school's address, Google Maps embed URL and WhatsApp number there.
-- Leadership welcome messages and portraits are configured in `js/content.js` under `leadership`. The Proprietress portrait is already available; add the Principal's and Headmistress's portrait paths to replace their generated placeholders.
-- Respects `prefers-reduced-motion`.
+Set `NEXT_PUBLIC_API_BASE_URL` in `.env.local` to your backend's public API origin. A typed request helper is available in `src/lib/api-client.ts`. Configure your backend to allow the frontend's origin through CORS. The backend endpoints and request/response types have intentionally not been assumed; share your API documentation to connect forms and admin features to the correct routes.
+
+Until that contract is wired in, the existing forms and admin dashboard retain their original browser-local demo behavior. The admin login is not production authentication, and local browser data does not sync across devices.
+
+## Existing content
+
+- Public pages and administration pages retain their current URLs without the `.html` extension. Existing `.html` links redirect to the corresponding Next.js route.
+- Website content is still sourced from the existing `public/js/config.js` and `public/js/content.js` files during this compatibility stage.
+- Replace sample statistics, staff details, news, hours, and age ranges with confirmed school information.
+- School locations and WhatsApp numbers are configured in `public/js/config.js`; leadership messages and portraits are configured in `public/js/content.js`.
+- The website respects `prefers-reduced-motion`.

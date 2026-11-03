@@ -95,7 +95,7 @@ const schoolConfig = {
     {
       id: "primary",
       name: "Primary School",
-      detailPage: "primary-school.html",
+      detailPage: "/primary-school",
       leader: "primaryHead",
       age: "Primary 1 to Primary 6",
       desc: "Developing academic knowledge, confidence, creativity and character.",
@@ -116,7 +116,7 @@ const schoolConfig = {
     {
       id: "secondary",
       name: "Secondary School",
-      detailPage: "secondary-school.html",
+      detailPage: "/secondary-school",
       leader: "principal",
       age: "JSS 1 to SS 3",
       desc: "Preparing students for higher education, leadership and future opportunities.",

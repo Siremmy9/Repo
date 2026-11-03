@@ -21,28 +21,27 @@ const App = {
   Seed.run();
   applyTheme();
   const cfg = Settings.get();
-  const page = location.pathname.split("/").pop() || "index.html";
+  const page = location.pathname.replace(/\/+$/, "") || "/";
   const img = (src, label, i, w, h) =>
     Utils.assetUrl(src) || Utils.ph(label, i, w, h);
 
   /* ------------------------------ Header / footer ------------------------------ */
   const NAV = [
-    ["Home", "index.html"],
-    ["About", "about.html"],
-    ["Our School", "schools.html"],
-    ["Academics", "academics.html"],
-    // ["Admissions", "admissions.html Excellence"],
-    ["Fees", "fees.html"],
-    ["Facilities", "facilities.html"],
-    ["Gallery", "gallery.html"],
-    ["News", "news.html"],
-    ["Contact", "contact.html"],
+    ["Home", "/"],
+    ["About", "/about"],
+    ["Our School", "/schools"],
+    ["Academics", "/academics"],
+    // ["Admissions", "/admissions"],
+    ["Fees", "/fees"],
+    ["Facilities", "/facilities"],
+    ["Gallery", "/gallery"],
+    ["News", "/news"],
+    ["Contact", "/contact"],
   ];
-  const isActive = (href) =>
-    href === page || (href === "index.html" && page === "");
+  const isActive = (href) => href === page;
 
   function brand() {
-    return `<a class="brand" href="index.html" aria-label="${esc(cfg.name)} home"><img class="brand-logo" src="${esc(Utils.assetUrl(cfg.logo))}" alt="" width="48" height="48"><span class="brand-name">${esc(cfg.name)}</span></a>`;
+    return `<a class="brand" href="/" aria-label="${esc(cfg.name)} home"><img class="brand-logo" src="${esc(Utils.assetUrl(cfg.logo))}" alt="" width="48" height="48"><span class="brand-name">${esc(cfg.name)}</span></a>`;
   }
   function navLinks() {
     return NAV.map(
@@ -60,7 +59,7 @@ const App = {
         <nav class="nav" aria-label="Main navigation"><ul>${navLinks()}</ul></nav>
         <div class="header-actions">
           <a class="icon-btn" data-wa target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">${icon("whatsapp", 22)}</a>
-          <a class="btn btn-gold btn-sm header-cta" href="admissions.html#apply">Apply </a>
+          <a class="btn btn-gold btn-sm header-cta" href="/admissions#apply">Apply </a>
           <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">${icon("menu", 26)}</button>
         </div>
       </div>
@@ -68,7 +67,7 @@ const App = {
         <div class="mobile-menu__bar">${brand()}<button class="menu-close" type="button" aria-label="Close menu">${icon("close", 26)}</button></div>
         <nav aria-label="Mobile navigation"><ul>${navLinks()}</ul></nav>
         <div class="mobile-menu__cta">
-          <a class="btn btn-gold" href="admissions.html#apply">Apply Now</a>
+          <a class="btn btn-gold" href="/admissions#apply">Apply Now</a>
           <a class="btn btn-ghost-light" data-wa target="_blank" rel="noopener">${icon("whatsapp", 20)} WhatsApp us</a>
         </div>
       </div>`;
@@ -131,13 +130,13 @@ const App = {
           ${brand()}
           <p class="footer-tag">${esc(cfg.tagline)} </p>
           <a class="btn btn-gold btn-sm" data-wa target="_blank" rel="noopener">${icon("whatsapp", 18)} Chat on WhatsApp</a> </p>
-          <p><a class="btn btn-sm btn-gold" href="admin/login.html">Admin login</a></p>
+          <p><a class="btn btn-sm btn-gold" href="/admin/login">Admin login</a></p>
         </div>
         <div><h2 class="footer-h">Quick links</h2><ul class="footer-list">
-          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="admissions.html">Admissions</a></li>
-          <li><a href="fees.html">Fees</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+          <li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/admissions">Admissions</a></li>
+          <li><a href="/fees">Fees</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/contact">Contact</a></li></ul></div>
         <div><h2 class="footer-h">School sections</h2><ul class="footer-list">
-          ${cfg.levels.map((l) => `<li><a href="schools.html#${l.id}">${esc(l.name)}</a></li>`).join("")}</ul></div>
+          ${cfg.levels.map((l) => `<li><a href="/schools#${l.id}">${esc(l.name)}</a></li>`).join("")}</ul></div>
         <div><h2 class="footer-h">Contact</h2><ul class="footer-list footer-contact">
           <li>${icon("phone", 18)}<a data-tel>${esc(cfg.phone)}</a></li>
           <li>${icon("mail", 18)}<a data-mail>${esc(cfg.email)}</a></li>
@@ -265,13 +264,13 @@ const App = {
           return `<article class="school-card reveal">
         <div class="arch"><img src="${esc(src)}" alt="Pupils in the ${esc(l.name)} section of ${esc(cfg.name)}" width="640" height="800" loading="lazy" decoding="async"></div>
         <div class="school-card__body"><p class="chip">${esc(l.age)}</p><h3>${esc(l.name)}</h3><p>${esc(l.desc)}</p>
-        <div class="btn-row"><a class="btn btn-outline btn-sm" href="schools.html#${l.id}">Learn More<span class="sr-only"> about ${esc(l.name)}</span></a>
+        <div class="btn-row"><a class="btn btn-outline btn-sm" href="/schools#${l.id}">Learn More<span class="sr-only"> about ${esc(l.name)}</span></a>
         ${l.detailPage ? `<a class="btn btn-wine btn-sm" href="${esc(l.detailPage)}">View school<span class="sr-only"> details for ${esc(l.name)}</span></a>` : ""}</div></div></article>`;
         return `<article class="level-block reveal" id="${l.id}">
         <div class="arch arch--lg"><img src="${esc(src)}" alt="${esc(l.name)} section at ${esc(cfg.name)}" width="640" height="800" loading="lazy" decoding="async"></div>
         <div class="level-block__text"><h2>${esc(l.name)}</h2><p class="chip">${esc(l.age)}</p><p class="lead">${esc(l.desc)}</p>
         <h3>What children experience</h3><ul class="ticks">${l.focus.map((f) => `<li>${icon("check", 18)}${esc(f)}</li>`).join("")}</ul>
-        <div class="btn-row"><a class="btn btn-wine" href="admissions.html?level=${l.id}#apply">Apply to ${esc(l.name)}</a>
+        <div class="btn-row"><a class="btn btn-wine" href="/admissions?level=${l.id}#apply">Apply to ${esc(l.name)}</a>
         <a class="btn btn-outline" data-wa="Hello ${esc(cfg.name)}, I would like to know more about your ${esc(l.name)} section." target="_blank" rel="noopener">${icon("whatsapp", 18)} Ask on WhatsApp</a>
         ${l.detailPage ? `<a class="btn btn-outline" href="${esc(l.detailPage)}">View school<span class="sr-only"> details for ${esc(l.name)}</span></a>` : ""}</div></div></article>`;
       })
@@ -527,11 +526,11 @@ const App = {
             <p><strong>Classes:</strong> ${school.classes.map(esc).join(", ")}</p>
             <p><strong>Location:</strong> ${esc(address)}</p>
             <div class="btn-row">
-              <a class="btn btn-wine" href="admissions.html?level=${esc(school.id)}#apply">Apply to ${esc(school.name)}</a>
+              <a class="btn btn-wine" href="/admissions?level=${esc(school.id)}#apply">Apply to ${esc(school.name)}</a>
               ${hasWhatsapp
                 ? `<a class="btn btn-outline" data-wa="Hello ${esc(cfg.name)}, I would like to know more about ${esc(school.name)}." data-wa-number="${esc(location.whatsapp)}" target="_blank" rel="noopener">${icon("whatsapp", 18)} WhatsApp this school</a>`
                 : `<span class="btn btn-outline" aria-disabled="true">Add this school's WhatsApp number in js/config.js</span>`}
-              <a class="btn btn-outline" href="schools.html#${esc(school.id)}">All school sections</a>
+              <a class="btn btn-outline" href="/schools#${esc(school.id)}">All school sections</a>
             </div>
           </div>
         </div>
@@ -631,7 +630,7 @@ const App = {
     );
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  const initializePage = () => {
     buildHeader();
     buildFooter();
     $$("[data-render]").forEach((el) => {
@@ -646,5 +645,17 @@ const App = {
     App.readyFns.forEach((fn) => fn());
     bindConfig();
     document.dispatchEvent(new Event("school:ready"));
-  });
+  };
+
+  if (window.__NEXT_LEGACY_BRIDGE__) {
+    document.addEventListener("school:legacy-ready", initializePage, {
+      once: true,
+    });
+  } else if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePage, {
+      once: true,
+    });
+  } else {
+    initializePage();
+  }
 })();
