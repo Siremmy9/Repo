@@ -12,7 +12,7 @@ const publicPages = [
   "news",
   "primary-school",
   "schools",
-  "secondary-school",
+  "college",
 ];
 const adminPages = [
   "activities",

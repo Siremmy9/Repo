@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"Texcel Schools | Raising the very best","description":"Texcel Schools offers Crèche, Nursery, Primary and Secondary education on the Epe-Ajah Expressway, Lagos. View fees, admissions, facilities and contact the school."} as const;
+export const metadata = {"title":"Texcel Schools | Raising the very best","description":"Texcel Schools offers Crèche, Pre-School, Primary and College education on the Epe-Ajah Expressway, Lagos. View fees, admissions, facilities and contact the school."} as const;
 export const pageProps = {"bodyClass":"","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js","/js/gallery.js"]} as const;
 
 export default function HomePage(): ReactNode {
@@ -89,13 +89,13 @@ export default function HomePage(): ReactNode {
                 <li>Crèche</li>
 
               
-                <li>Nursery</li>
+                <li>Pre-School</li>
 
               
                 <li>Primary</li>
 
               
-                <li>Secondary</li>
+                <li>College</li>
 
             
               </ul>
@@ -125,8 +125,8 @@ export default function HomePage(): ReactNode {
             
               <p className="lead" data-cfg="about.intro">
 
-              Eagles World Schools is a family-focused school offering Crèche,
-              Nursery, Primary and Secondary education.
+              Texcel Schools is a family-focused school offering Crèche,
+              Pre-School, Primary and College education.
             
               </p>
 

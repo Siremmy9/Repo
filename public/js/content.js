@@ -11,10 +11,10 @@ const schoolContent = {
     },
     principal: {
       name: "Mr Odeniyi",
-      title: "Principal, Secondary School",
+      title: "Principal, college",
       photo: "assets/images/facilities/logo.jpg",
       welcome: [
-        "Welcome to the Secondary School at Texcel Schools. We are committed to helping every student grow in knowledge, character and confidence as they prepare for the opportunities ahead.",
+        "Welcome to the college at Texcel Schools. We are committed to helping every student grow in knowledge, character and confidence as they prepare for the opportunities ahead.",
         "We value the partnership between school and family and look forward to supporting your child's next stage of learning.",
       ],
     },
@@ -47,7 +47,7 @@ const schoolContent = {
       name: "Mrs Adeleke",
       position: "Vice Principal",
       department: "Primary",
-      photo: "assets/images/client3.jpg",
+      photo: "assets/images/logo.jpg",
       bio: "Head Teacher with a primary purpose of raising excellent and morally upright people, leaders and world changers in the country",
     },
     {
@@ -60,7 +60,7 @@ const schoolContent = {
     {
       name: "Miss Chioma",
       position: "Asst Head Teacher",
-      department: "Secondary",
+      department: "college",
       photo: "assets/images/logo.jpg",
       bio: "Expedita officia magni enim autem ad sed aperiam porro. Sunt mollitia cumque unde.",
     },
@@ -262,7 +262,7 @@ const schoolContent = {
       excerpt:
         "Admission is open. Read how to begin the process for your child.",
       content:
-        "Admission is open for Crèche, Nursery, Primary and Secondary.\n\nUse the Apply Now button or message us on WhatsApp.",
+        "Admission is open for Crèche, Nursery, Primary and college.\n\nUse the Apply Now button or message us on WhatsApp.",
     },
     {
       title: "Examination Timetable",
@@ -282,7 +282,7 @@ const schoolContent = {
       excerpt:
         "Admission is open. Read how to begin the process for your child.",
       content:
-        "Admission is open for Crèche, Nursery, Primary and Secondary.\n\nUse the Apply Now button or message us on WhatsApp.",
+        "Admission is open for Crèche, Pre-School, Primary and College.\n\nUse the Apply Now button or message us on WhatsApp.",
     },
   ],
 
@@ -433,7 +433,7 @@ const schoolContent = {
 
   /* ------- FEES -------- */
   // Type an amount like "₦XX,XXX" or "Contact School". Keys match the "id" of
-  // each school in config.js (creche, nursery, primary, secondary).
+  // each school in config.js (creche, nursery, primary, college).
   fees: {
     levels: {
       creche: {
@@ -444,7 +444,7 @@ const schoolContent = {
         uniform: "5,000",
         other: "10,000",
       },
-      nursery: {
+      preschool: {
         tuition: "25,000",
         registration: "15,000",
         levy: "15,000",
@@ -460,7 +460,7 @@ const schoolContent = {
         uniform: "10,000",
         other: "15,000",
       },
-      secondary: {
+      college: {
         tuition: "35,000",
         registration: "25,000",
         levy: "15,000",

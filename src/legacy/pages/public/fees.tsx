@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"School Fees | Texcel Schools","description":"Tuition, registration and other fees for Crèche, Nursery, Primary and Secondary at Texcel Schools, plus how to pay."} as const;
+export const metadata = {"title":"School Fees | Texcel Schools","description":"Tuition, registration and other fees for Crèche, Pre-School, Primary and College at Texcel Schools, plus how to pay."} as const;
 export const pageProps = {"bodyClass":"","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js","/js/fees.js"]} as const;
 
 export default function FeesPage(): ReactNode {

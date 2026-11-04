@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"Our Schools | Texcel Schools","description":"Explore the Crèche, Nursery, Primary and Secondary sections of Texcel Schools in Lagos, Nigeria."} as const;
+export const metadata = {"title":"Our Schools | Texcel Schools","description":"Explore the Crèche, Pre-School, Primary and College sections of Texcel Schools in Lagos, Nigeria."} as const;
 export const pageProps = {"bodyClass":"","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js"]} as const;
 
 export default function SchoolsPage(): ReactNode {
@@ -31,7 +31,7 @@ export default function SchoolsPage(): ReactNode {
           
             <p>
 
-            Crèche, Nursery, Primary and Secondary: a clear path from a child's
+            Crèche, Pre-School, Primary and College: a clear path from a child's
             first day to university.
           
             </p>

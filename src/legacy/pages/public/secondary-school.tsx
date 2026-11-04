@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"Secondary School | Texcel Schools","description":"Learn about the Secondary School at Texcel Schools, view its location and contact the school on WhatsApp."} as const;
-export const pageProps = {"bodyClass":"","school":"secondary","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js"]} as const;
+export const metadata = {"title":"College | Texcel Schools","description":"Learn about the College at Texcel Schools, view its location and contact the school on WhatsApp."} as const;
+export const pageProps = {"bodyClass":"","school":"college","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js"]} as const;
 
 export default function SecondarySchoolPage(): ReactNode {
   return (
@@ -23,10 +23,10 @@ export default function SecondarySchoolPage(): ReactNode {
           <div className="container">
 
           
-            <h1>Secondary School</h1>
+            <h1>College</h1>
 
           
-            <p>Discover our Secondary School, its learning experience and location.</p>
+            <p>Discover our College, its learning experience and location.</p>
 
         
           </div>

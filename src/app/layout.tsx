@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Texcel Schools",
   description:
-    "Texcel Schools offers Crèche, Nursery, Primary and Secondary education in Lagos, Nigeria.",
+    "Texcel Schools offers Crèche, Pre-School, Primary and College education in Lagos, Nigeria.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

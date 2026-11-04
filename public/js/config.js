@@ -34,7 +34,7 @@ const schoolConfig = {
     creche: "assets/images/facilities/kids.jpg",
     nursery: "assets/images/facilities/class.jpg",
     primary: "assets/images/facilities/pryAssembly.jpg",
-    secondary: "assets/images/facilities/assembly.jpg",
+    college: "assets/images/facilities/assembly.jpg",
   },
 
   mapUrl:
@@ -46,7 +46,7 @@ const schoolConfig = {
         "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16766.09517959793!2d3.6464641512850067!3d6.471305883366621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793705355860!5m2!1sen!2sng",
       whatsapp: "2347037116024",
     },
-    secondary: {
+    college: {
       address: " Chima Unachukwu Drive Abijo-Ajah.",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16766.09517959793!2d3.6464641512850067!3d6.471305883366621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sTeresh%20Eternal%20Excellence%20School%20(Texcels)!5e1!3m2!1sen!2sng!4v1793705355860!5m2!1sen!2sng",
@@ -114,9 +114,9 @@ const schoolConfig = {
       ],
     },
     {
-      id: "secondary",
-      name: "Secondary School",
-      detailPage: "/secondary-school",
+      id: "college",
+      name: "college ",
+      detailPage: "/college",
       leader: "principal",
       age: "JSS 1 to SS 3",
       desc: "Preparing students for higher education, leadership and future opportunities.",

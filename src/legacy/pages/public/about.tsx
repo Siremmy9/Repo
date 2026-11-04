@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"About Us | Texcel Schools","description":"Learn about Texcel Schools: our mission, vision, values and the dedicated team behind our Crèche, Nursery, Primary and Secondary sections in Lagos."} as const;
+export const metadata = {"title":"About Us | Texcel Schools","description":"Learn about Texcel Schools: our mission, vision, values and the dedicated team behind our Crèche, Pre-School, Primary and College sections in Lagos."} as const;
 export const pageProps = {"bodyClass":"","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js"]} as const;
 
 export default function AboutPage(): ReactNode {

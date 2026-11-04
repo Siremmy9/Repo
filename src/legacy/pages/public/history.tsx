@@ -97,8 +97,8 @@ export default function HistoryPage(): ReactNode {
           
             <p>
 
-            Today, the school provides a learning path through Crèche, Nursery,
-            Primary and Secondary education. Our founding vision remains at the
+            Today, the school provides a learning path through Crèche, Preschool,
+            Primary and College education. Our founding vision remains at the
             heart of that journey:
           
             </p>
