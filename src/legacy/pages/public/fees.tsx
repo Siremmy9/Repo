@@ -68,20 +68,20 @@ export default function FeesPage(): ReactNode {
             {/* <div className="fees-grid" data-render="fees-cards" /> */}
 
           
-            <p id="fees-note" className="lead" hidden={true} />
+            {/* <p id="fees-note" className="lead" hidden={true} /> */}
 
           
-            <p style={{"marginTop":"2rem"}}>
+            {/* <p style={{"marginTop":"2rem"}}>
 
             
-              {/* <button type="button" className="btn btn-wine" id="download-fees" data-icon="download">
+              <button type="button" className="btn btn-wine" id="download-fees" data-icon="download">
 
               Download Fee Schedule
             
-              </button> */}
+              </button>
 
           
-            </p>
+            </p> */}
 
         
           </div>
