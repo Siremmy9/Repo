@@ -192,7 +192,6 @@ const schoolContent = {
       excerpt:
         "Resumption dates, school hours and first-week arrangements are shared here once confirmed.",
       content: "",
-      // Replace this sample text with the real announcement from the school.\n\nContact the school office or message us on WhatsApp if you have questions.
     },
     {
       title: "After-School Services",
@@ -435,42 +434,42 @@ const schoolContent = {
   // Type an amount like "₦XX,XXX" or "Contact School". Keys match the "id" of
   // each school in config.js (creche, nursery, primary, college).
   fees: {
-    levels: {
-      creche: {
-        tuition: "20,000",
-        registration: "10,000",
-        levy: "10,000",
-        books: "5,000",
-        uniform: "5,000",
-        other: "10,000",
-      },
-      preschool: {
-        tuition: "25,000",
-        registration: "15,000",
-        levy: "15,000",
-        books: "20,000",
-        uniform: "10,000",
-        other: "10,000",
-      },
-      primary: {
-        tuition: "30,000",
-        registration: "20,000",
-        levy: "15,000",
-        books: "20,000",
-        uniform: "10,000",
-        other: "15,000",
-      },
-      college: {
-        tuition: "35,000",
-        registration: "25,000",
-        levy: "15,000",
-        books: "20,000",
-        uniform: "15,000",
-        other: "20,000",
-      },
-    },
+    // levels: {
+    //   creche: {
+    //     tuition: "20,000",
+    //     registration: "10,000",
+    //     levy: "10,000",
+    //     books: "5,000",
+    //     uniform: "5,000",
+    //     other: "10,000",
+    //   },
+    //   preschool: {
+    //     tuition: "25,000",
+    //     registration: "15,000",
+    //     levy: "15,000",
+    //     books: "20,000",
+    //     uniform: "10,000",
+    //     other: "10,000",
+    //   },
+    //   primary: {
+    //     tuition: "30,000",
+    //     registration: "20,000",
+    //     levy: "15,000",
+    //     books: "20,000",
+    //     uniform: "10,000",
+    //     other: "15,000",
+    //   },
+    //   college: {
+    //     tuition: "35,000",
+    //     registration: "25,000",
+    //     levy: "15,000",
+    //     books: "20,000",
+    //     uniform: "15,000",
+    //     other: "20,000",
+    //   },
+    // },
     payment: {
-      note: "Fees and payment information can be updated by the school administrator.",
+      note: "Fees varies per term. Contact the school administrator for current fees schedule.",
       bankName: "Bank Name",
       accountName: " Texcel Schools",
       accountNumber: "XXXXXXXXXX",

@@ -56,9 +56,8 @@ export default function FeesPage(): ReactNode {
             
               <p>
 
-              Fees and payment information can be updated by the school
-              administrator. Contact the school office to confirm current
-              amounts.
+              Contact the school office to confirm current
+              amounts of various sections.
             
               </p>
 
@@ -66,7 +65,7 @@ export default function FeesPage(): ReactNode {
             </div>
 
           
-            <div className="fees-grid" data-render="fees-cards" />
+            {/* <div className="fees-grid" data-render="fees-cards" /> */}
 
           
             <p id="fees-note" className="lead" hidden={true} />
@@ -75,11 +74,11 @@ export default function FeesPage(): ReactNode {
             <p style={{"marginTop":"2rem"}}>
 
             
-              <button type="button" className="btn btn-wine" id="download-fees" data-icon="download">
+              {/* <button type="button" className="btn btn-wine" id="download-fees" data-icon="download">
 
               Download Fee Schedule
             
-              </button>
+              </button> */}
 
           
             </p>
