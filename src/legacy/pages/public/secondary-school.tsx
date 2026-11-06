@@ -35,7 +35,7 @@ export default function SecondarySchoolPage(): ReactNode {
         </section>
 
       
-        <section className="section" data-render="school-detail" data-school="secondary" />
+        <section className="section" data-render="school-detail" data-school="college" />
 
     
       </main>

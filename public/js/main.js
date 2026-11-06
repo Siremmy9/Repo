@@ -292,8 +292,11 @@ const App = {
 
   R.about = (el) => {
     const a = cfg.about;
-    el.innerHTML = `<article class="about-card reveal"><h3>Mission Statement </h3><p>${esc(a.mission)}</p></article>
-      <article class="about-card reveal"><h3>Our Vision</h3><p>${esc(a.mandate)}</p></article>`;
+    el.innerHTML = `
+      <article class="about-card reveal"><h3>Our Mission</h3><p>${esc(a.mission)}</p></article>
+      <article class="about-card reveal"><h3>Our Vision</h3><p>${esc(a.vision)}</p></article>
+      <article class="about-card reveal"><h3>Our Philosophy</h3><p>${esc(a.philosophy)}</p></article>
+      <article class="about-card about-card--anthem reveal"><h3>Our Anthem</h3><p>${esc(a.anthem)}</p></article>`;
   };
 
   R["admission-steps"] = (el) => {

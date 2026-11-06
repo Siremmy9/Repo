@@ -135,7 +135,11 @@ const schoolConfig = {
     mission:
       "We are dedicated to inspire, nurture and educate children in a conducive, safe and prepared environment through highly skilled professionals, making learning easier for children and developing them to become seasoned future leaders and Joy of Many Nations.",
     vision:
-      "dddTo raise children that are excellent morally and academically, ultimately becoming solid and responsible future leaders.",
+      "To raise children who are excellent morally and academically, becoming solid and responsible future leaders.",
+    philosophy:
+      "Every child can learn, grow and make a positive difference. We nurture each learner through caring guidance, purposeful teaching, strong values and opportunities to discover their gifts.",
+    anthem:
+      "Texcel, our school, where bright minds grow,\nWith hearts of courage, onward we go.\nIn truth and kindness, strong and wise,\nWe reach for dreams and touch the skies.\n\nChorus:\nTexcel, Texcel, we proudly stand,\nLearning and serving, hand in hand.\nJoy of nations, our light will shine,\nWith hope and excellence, the future is mine.",
   },
 
   values: [

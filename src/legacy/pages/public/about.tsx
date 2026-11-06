@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export const metadata = {"title":"About Us | Texcel Schools","description":"Learn about Texcel Schools: our mission, vision, values and the dedicated team behind our Crèche, Pre-School, Primary and College sections in Lagos."} as const;
+export const metadata = {"title":"About Us | Texcel Schools","description":"Learn about Texcel Schools: our mission, vision, philosophy, anthem and values, and the dedicated team behind our Crèche, Pre-School, Primary and College sections in Lagos."} as const;
 export const pageProps = {"bodyClass":"","scripts":["/js/config.js","/js/content.js","/js/storage.js","/js/main.js"]} as const;
 
 export default function AboutPage(): ReactNode {
@@ -110,7 +110,7 @@ export default function AboutPage(): ReactNode {
             <div className="section-head">
 
             
-              <h2 id="mvp-h">Mission, vision and philosophy</h2>
+              <h2 id="mvp-h">Mission, vision, philosophy and anthem</h2>
 
           
             </div>

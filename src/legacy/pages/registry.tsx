@@ -96,6 +96,12 @@ const publicPages: Record<string, PageDefinition> = {
   academics: { Component: Academics, metadata: academicsMetadata, pageProps: academicsProps, isAdmin: false },
   admissions: { Component: Admissions, metadata: admissionsMetadata, pageProps: admissionsProps, isAdmin: false },
   contact: { Component: Contact, metadata: contactMetadata, pageProps: contactProps, isAdmin: false },
+  college: {
+    Component: SecondarySchool,
+    metadata: secondarySchoolMetadata,
+    pageProps: secondarySchoolProps,
+    isAdmin: false,
+  },
   facilities: { Component: Facilities, metadata: facilitiesMetadata, pageProps: facilitiesProps, isAdmin: false },
   fees: { Component: Fees, metadata: feesMetadata, pageProps: feesProps, isAdmin: false },
   gallery: { Component: Gallery, metadata: galleryMetadata, pageProps: galleryProps, isAdmin: false },

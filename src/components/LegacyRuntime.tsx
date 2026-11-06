@@ -35,29 +35,33 @@ export default function LegacyRuntime({
             Promise<void>
           >());
 
-        for (const src of scripts) {
-          let scriptPromise = scriptPromises.get(src);
-          if (!scriptPromise) {
-            scriptPromise = new Promise<void>((resolve, reject) => {
-              const script = document.createElement("script");
-              script.src = src;
-              script.async = false;
-              script.onload = () => resolve();
-              script.onerror = () => {
-                script.remove();
-                reject(new Error(`Could not load the site script at ${src}.`));
-              };
-              document.body.appendChild(script);
-            });
-            scriptPromises.set(src, scriptPromise);
-            void scriptPromise.catch(() => {
-              if (scriptPromises.get(src) === scriptPromise) {
-                scriptPromises.delete(src);
-              }
-            });
-          }
-          await scriptPromise;
-        }
+        await Promise.all(
+          scripts.map((src) => {
+            let scriptPromise = scriptPromises.get(src);
+            if (!scriptPromise) {
+              scriptPromise = new Promise<void>((resolve, reject) => {
+                const script = document.createElement("script");
+                script.src = src;
+                script.async = false;
+                script.onload = () => resolve();
+                script.onerror = () => {
+                  script.remove();
+                  reject(
+                    new Error(`Could not load the site script at ${src}.`),
+                  );
+                };
+                document.body.appendChild(script);
+              });
+              scriptPromises.set(src, scriptPromise);
+              void scriptPromise.catch(() => {
+                if (scriptPromises.get(src) === scriptPromise) {
+                  scriptPromises.delete(src);
+                }
+              });
+            }
+            return scriptPromise;
+          }),
+        );
 
         if (active) {
           document.dispatchEvent(new Event("school:legacy-ready"));
