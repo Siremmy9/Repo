@@ -68,7 +68,7 @@ export default function FeesPage(): ReactNode {
             {/* <div className="fees-grid" data-render="fees-cards" /> */}
 
           
-            {/* <p id="fees-note" className="lead" hidden={true} /> */}
+            <p id="fees-note" className="lead" hidden={true} />
 
           
             {/* <p style={{"marginTop":"2rem"}}>
